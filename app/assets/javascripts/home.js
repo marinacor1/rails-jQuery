@@ -15,6 +15,9 @@ $(document).ready(function(){
   })
 
   $("#miley").on("click", function(){
-    $("")
+    $("#wrecking-ball").toggleClass("hidden");
+    var counter = parseInt($("#wrecking-ball").find("#view-counter").text())
+    counter ++
+    $("#wrecking-ball").find("#view-counter").text(counter)
   })
 })
