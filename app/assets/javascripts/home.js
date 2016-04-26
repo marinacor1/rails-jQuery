@@ -1,23 +1,28 @@
 $(document).ready(function(){
 
- $("#justin").on("click", function() {
-  $("#baby").toggleClass("hidden");
-  var counter = parseInt($("#baby").find("#view-counter").text())
-  counter++
-  $("#baby").find("#view-counter").text(counter)
- })
+  toggleSong("#justin", "#baby")
+  toggleSong("#miley", "#wrecking-ball")
+  toggleSong("#selena", "#come-and-get-it")
 
-  $("#selena").on("click", function() {
-    $("#come-and-get-it").toggleClass("hidden");
-    var counter = parseInt($("#come-and-get-it").find("#view-counter").text())
-    counter ++
-    $("#come-and-get-it").find("#view-counter").text(counter)
-  })
+  function toggleSong(artistID, songID){
+    $(artistID).on("click", function() {
+      $(songID).toggleClass("hidden");
+      // var counter = parseInt($(songID).find("#view-counter").text())
+      // counter ++
+      // $(songID).find("#view-counter").text(counter)
+    })
+  }
 
-  $("#miley").on("click", function(){
-    $("#wrecking-ball").toggleClass("hidden");
-    var counter = parseInt($("#wrecking-ball").find("#view-counter").text())
-    counter ++
-    $("#wrecking-ball").find("#view-counter").text(counter)
-  })
+  $("#colorize").on("click", function(){
+    $("#baby").css({'color': 'green'})
+  });
+
+  $("#colorize").click(function(){
+    $("#wrecking-ball").css({'color': 'blue'})
+  });
+
+  $("#colorize").click(function(){
+    $("#come-and-get-it").css({'color': 'purple'})
+  });
+
 })
